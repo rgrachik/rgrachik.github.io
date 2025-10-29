@@ -1,288 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Роман Грачик — iOS разработчик</title>
-  <meta name="description" content="Портфолио iOS‑разработчика: приложения, навыки, косввсвнтакты." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --muted:#9aa4b2;
-      --accent-start:#5eead4;
-      --accent-end:#60a5fa;
-      --accent-text:#052024;
-      --glass: rgba(255,255,255,0.03);
-      color-scheme: dark;
-      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,var(--bg) 0%, #071020 100%);color:#e6eef6;min-height:100vh;}
-    .page{max-width:1100px;margin:28px auto;padding:28px}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Роман Грачик</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'IBM Plex Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
 
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .avatar{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent-start),var(--accent-end));display:flex;justify-content:center;align-items:center;font-weight:800;color:var(--accent-text);font-size:1.15rem}
-    h1{margin:0;font-size:1.4rem}
-    p.lead{margin:6px 0 0;color:var(--muted);max-width:680px}
-    nav{display:flex;gap:10px}
-    .navlink{padding:8px 12px;border-radius:10px;text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600}
-    .navlink.primary{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:var(--accent-text);border:0}
+        h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
 
-    /* Hero layout */
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:22px;align-items:start}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6);}
-
-    /* Skills */
-    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .skill{background:var(--glass);padding:7px 12px;border-radius:999px;font-size:0.9rem;color:var(--muted)}
-
-    /* Projects grid */
-    .projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
-    .proj{display:flex;flex-direction:column;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);gap:10px}
-    .proj .thumb{height:140px;border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
-    .proj h3{margin:0;font-size:1rem}
-    .proj p{margin:0;color:var(--muted);font-size:0.9rem}
-    .proj .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:0.8rem;color:var(--muted)}
-
-    /* Aside */
-    aside .meta{display:flex;flex-direction:column;gap:12px}
-    .meta-item{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
-    .contact{display:flex;flex-direction:column;gap:8px}
-    a.link{color:var(--accent-start);text-decoration:none;font-weight:600}
-
-    /* Footer */
-    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:0.9rem}
-
-    /* Modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.7);display:none;align-items:center;justify-content:center;padding:20px}
-    .modal{background:linear-gradient(180deg,#071326,#051020);padding:18px;border-radius:12px;max-width:900px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
-    .modal .grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
-    .close{background:transparent;border:0;color:var(--muted);font-weight:700}
-
-    /* Responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr}
-      .avatar{width:60px;height:60px}
-    }
-
-    /* Accessibility focus */
-    .navlink:focus,.btn:focus{outline:3px solid rgba(94,234,212,0.12);outline-offset:2px}
-  </style>
+        h2 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #aaa;
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="brand">
-        <div class="avatar">RG</div>
-        <div>
-          <h1>Роман Грачик</h1>
-          <p class="lead">iOS‑разработчик. Специализация: обработка изображений, Metal, SwiftUI, интеграции и оптимизация.</p>
-        </div>
-      </div>
-
-      <nav aria-label="Главная навигация">
-        <a class="navlink" href="#projects">Проекты</a>
-        <a class="navlink" href="#about">О себе</a>
-        <a class="navlink primary" href="#contacts">Связаться</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <main class="card">
-        <h2 id="about">Привет — я Роман</h2>
-        <p class="lead">Разрабатываю iOS‑приложения с акцентом на качество кода, производительность и UX. Работаю с Swift, SwiftUI, Combine, Metal и CoreImage. Люблю оптимизировать графические конвейеры и писать чистую архитектуру.</p>
-
-        <div class="skills" aria-hidden>
-          <span class="skill">Swift</span>
-          <span class="skill">SwiftUI</span>
-          <span class="skill">Metal</span>
-          <span class="skill">CoreImage</span>
-          <span class="skill">Combine</span>
-          <span class="skill">Firebase</span>
-          <span class="skill">Unit Tests</span>
-        </div>
-
-        <div style="margin-top:16px;display:flex;gap:10px">
-          <a class="navlink primary" href="#projects">Мои проекты</a>
-          <a class="navlink" href="#contacts">Написать мне</a>
-        </div>
-
-        <section style="margin-top:18px" id="projects">
-          <h2>Избранные проекты</h2>
-          <div class="projects">
-            <article class="proj" data-project="onfilm">
-              <div class="thumb">On Film — preview</div>
-              <h3>On Film</h3>
-              <p>Плёночный редактор: LUT, зерно, экспорт высокого качества, Metal‑ускорение.</p>
-              <div class="meta">
-                <span class="tag">SwiftUI</span>
-                <button class="navlink" onclick="openProject('onfilm')">Подробнее</button>
-              </div>
-            </article>
-
-            <article class="proj" data-project="service">
-              <div class="thumb">Service Interval</div>
-              <h3>Service Interval Display</h3>
-              <p>Учёт обслуживания автомобиля: напоминания, история, красивые UI‑карточки.</p>
-              <div class="meta">
-                <span class="tag">UIKit</span>
-                <button class="navlink" onclick="openProject('service')">Подробнее</button>
-              </div>
-            </article>
-
-            <article class="proj" data-project="processor">
-              <div class="thumb">Processor</div>
-              <h3>Film Photo Processor</h3>
-              <p>Автоматизация обработки RAW, поддержка пресетов Capture One, batch‑обработка.</p>
-              <div class="meta">
-                <span class="tag">Metal</span>
-                <button class="navlink" onclick="openProject('processor')">Подробнее</button>
-              </div>
-            </article>
-
-            <article class="proj" data-project="bot">
-              <div class="thumb">Telegram Bot</div>
-              <h3>Bot for Phototech</h3>
-              <p>Телеграм‑бот для купли‑продажи б/у фототехники (Python, PostgreSQL).</p>
-              <div class="meta">
-                <span class="tag">Python</span>
-                <button class="navlink" onclick="openProject('bot')">Подробнее</button>
-              </div>
-            </article>
-
-          </div>
-        </section>
-      </main>
-
-      <aside>
-        <div class="meta">
-          <div class="meta-item">
-            <strong>Где:</strong>
-            <div class="lead">Россия / Германия</div>
-          </div>
-
-          <div class="meta-item">
-            <strong>Стек:</strong>
-            <div class="lead">Swift, SwiftUI, Metal, CoreImage, Firebase</div>
-          </div>
-
-          <div class="meta-item contact" id="contacts">
-            <strong>Контакты</strong>
-            <a class="link" href="mailto:roman@example.com">roman@example.com</a>
-            <a class="link" href="https://t.me/roman_handle" target="_blank" rel="noopener">Telegram</a>
-            <a class="link" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-
-          <div class="meta-item">
-            <strong>Резюме</strong>
-            <div style="margin-top:8px"><a class="link" href="#">Скачать CV (PDF)</a></div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <footer>
-      <div>© <span id="year"></span> Роман Грачик — iOS разработчик</div>
-    </footer>
-  </div>
-
-  <!-- Modal: project details -->
-  <div id="modal" class="modal-backdrop" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
-    <div class="modal" role="document">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <strong id="modal-title">Проект</strong>
-        <button class="close" aria-label="Закрыть" onclick="closeModal()">✕</button>
-      </div>
-      <div class="grid">
-        <div>
-          <p id="modal-desc" style="color:var(--muted)"></p>
-          <ul id="modal-list" style="margin-top:8px;color:var(--muted)"></ul>
-        </div>
-        <div>
-          <div style="height:200px;border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;color:var(--muted)">Скриншоты</div>
-          <div style="margin-top:10px"><a id="modal-link" class="link" href="#" target="_blank">Ссылка в App Store / репозиторий</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple modal data
-    const projects = {
-      onfilm: {
-        title: 'On Film',
-        desc: 'Плёночный редактор с Metal‑ускорением: LUT, зерно, экспорт в высоком качестве. Фокус на производительности и сохранении цвета.',
-        bullets: ['Metal pipeline', 'LUT support', 'Export HEIC/JPEG/PNG'],
-        link: '#'
-      },
-      service: {
-        title: 'Service Interval Display',
-        desc: 'Учёт обслуживания автомобиля: напоминания, история, удобный UI для просмотра интервалов и расходников.',
-        bullets: ['Local notifications','Sync with cloud','Nice UI cards'],
-        link: '#'
-      },
-      processor: {
-        title: 'Film Photo Processor',
-        desc: 'Batch‑обработка RAW, интеграция с пресетами Capture One, автоматизация рабочих процессов.',
-        bullets: ['RAW pipeline','Preset support','CLI tools'],
-        link: '#'
-      },
-      bot: {
-        title: 'Telegram Bot',
-        desc: 'Бот для объявлений купли‑продажи фототехники — поиск, фильтры, база данных объявлений.',
-        bullets: ['Python','PostgreSQL','Admin panel'],
-        link: '#'
-      }
-    }
-
-    function openProject(id){
-      const data = projects[id];
-      if (!data) return;
-      document.getElementById('modal-title').textContent = data.title;
-      document.getElementById('modal-desc').textContent = data.desc;
-      const list = document.getElementById('modal-list');
-      list.innerHTML = '';
-      data.bullets.forEach(b => { const li = document.createElement('li'); li.textContent = b; list.appendChild(li); });
-      document.getElementById('modal-link').href = data.link;
-
-      const mb = document.getElementById('modal');
-      mb.style.display = 'flex';
-      mb.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(){
-      const mb = document.getElementById('modal');
-      mb.style.display = 'none';
-      mb.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
-
-    // Close modal on ESC
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
-        if (href.length > 1) {
-          e.preventDefault();
-          const el = document.querySelector(href);
-          if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
-      })
-    });
-  </script>
+    <h1>Роман Грачик</h1>
+    <h2>iOS-разработчик</h2>
 </body>
 </html>
