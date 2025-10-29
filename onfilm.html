@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnFilm — приложение</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        img.logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            max-width: 320px;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            color: #ccc;
+        }
+
+        a.appstore-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-weight: bold;
+            transition: opacity 0.2s ease;
+        }
+
+        a.appstore-button:hover {
+            opacity: 0.8;
+        }
+
+        a.appstore-button img {
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        footer a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="OnFilm Logo" class="logo">
+    <h1>OnFilm</h1>
+    <p>Простое и удобное приложение для обработки фотографий в стиле пленочной фотографии. 
+       Настрой LUT, добавь зерно и создай атмосферу настоящей пленки.</p>
+
+    <a href="https://apps.apple.com/app/idXXXXXXXX" class="appstore-button">
+        <img src="appstore.svg" alt="App Store">
+        Скачать в App Store
+    </a>
+
+    <footer>
+        <a href="privacy.html">Политика конфиденциальности</a> ·
+        <a href="mailto:support@onfilm.app">Написать на почту</a>
+    </footer>
+</body>
+</html>
