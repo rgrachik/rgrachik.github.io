@@ -41,6 +41,27 @@
             white-space: pre-line;
         }
 
+        /* Блок со скриншотами */
+        .screenshots {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .screenshots img {
+            width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
         a.appstore-button {
             display: inline-flex;
             align-items: center;
@@ -78,6 +99,42 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Адаптация под мобильные устройства */
+        @media (max-width: 768px) {
+            p {
+                width: 80%;
+                font-size: 14px;
+            }
+
+            .screenshots img {
+                width: 140px;
+            }
+
+            a.appstore-button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            img.logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .screenshots img {
+                width: 100px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            p {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,12 +155,20 @@ If you love the nostalgia of film eras, the vibrant colors of classic films, and
 Shoot, edit, share
     </p>
 
+    <!-- Скриншоты -->
+    <div class="screenshots">
+        <img src="../images/screen1.jpg" alt="OnFilm Screenshot 1">
+        <img src="../images/screen2.jpg" alt="OnFilm Screenshot 2">
+        <img src="../images/screen3.jpg" alt="OnFilm Screenshot 3">
+    </div>
+
+    <!-- Кнопка App Store -->
     <a href="https://apps.apple.com/app/on-film-photo/id6753209328" 
-   class="appstore-button"
-   target="_blank" rel="noopener noreferrer">
-    <img src="../images/appstore.png" alt="App Store">
-    Download in App Store
-</a>
+       class="appstore-button"
+       target="_blank" rel="noopener noreferrer">
+        <img src="../images/appstore.png" alt="App Store">
+        Download in App Store
+    </a>
 
     <footer>
         <a href="onfilmprivacy.html">Privacy</a> ·
