@@ -88,6 +88,32 @@
             color: #aaa;
             margin: 0;
         }
+
+        footer {
+            width: 100%;
+            border-top: 1px solid #222;
+            background-color: #000;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -113,6 +139,13 @@
             </div>
         </div>
     </div>
-    
+
+    <footer>
+        <div class="footer-links">
+            <a href="mailto:example@gmail.com">Написать на почту</a>
+            <a href="https://t.me/yourusername" target="_blank">Телеграм</a>
+            <a href="#">амвам</a>
+        </div>
+    </footer>
 </body>
 </html>
