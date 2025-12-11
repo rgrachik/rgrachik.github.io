@@ -1,1 +1,180 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Приложение для отслеживания сервисных интервалов обслуживания автомобиля">
+    <title>Service Interval Display</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        img.logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 24px;
+            border-radius: 16px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            width: 40%;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            color: #ccc;
+            white-space: pre-line;
+        }
+
+        /* Блок со скриншотами */
+        .screenshots {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .screenshots img {
+            width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        a.appstore-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-weight: bold;
+            transition: opacity 0.2s ease;
+        }
+
+        a.appstore-button:hover {
+            opacity: 0.8;
+        }
+
+        a.appstore-button img {
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        footer a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            p {
+                width: 80%;
+                font-size: 14px;
+            }
+
+            .screenshots img {
+                width: 140px;
+            }
+
+            a.appstore-button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            img.logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .screenshots img {
+                width: 100px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            p {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/logo.png" alt="OnFilm Logo" class="logo">
+    <h1>Service Interval Display</h1>
+    <p>
+"Service Interval Display" helps you keep track of all necessary consumable changes for your vehicle. Forget about paper records and reminders—now all the data is stored on your smartphone and always at your fingertips!
+
+App Features:
+
+iCloud sync
+
+View history and export reports
+
+Convenient consumable management—easily add and edit the list of all necessary changes
+
+To keep up-to-date, simply update your vehicle's mileage
+
+Simplicity and efficiency—all service interval information in one place
+
+Keep your vehicle in top condition and extend its lifespan.
+With "Service Interval Display," keeping track of consumable changes is easier than ever!
+    </p>
+
+    <div class="screenshots">
+        <img src="../images/sid_1.png" alt="SID Screenshot 1">
+        <img src="../images/sid_2.png" alt="SID Screenshot 2">
+        <img src="../images/sid_3.png" alt="SID Screenshot 3">
+    </div>
+
+    <a href="https://apps.apple.com/app/service-interval-display/id6737432111" 
+       class="appstore-button"
+       target="_blank" rel="noopener noreferrer">
+        <img src="../images/appstore.png" alt="App Store">
+        Download in App Store
+    </a>
+
+    <footer>
+        <a href="privacy.html">Privacy</a> ·
+        <a href="mailto:rgrachik@gmail.com">Write by e-mail</a>
+    </footer>
+</body>
+</html>
